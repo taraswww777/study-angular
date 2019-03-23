@@ -6,10 +6,11 @@ import { DEFAULT_PATH_TO_ID, DEFAULT_PATH_TO_TITLE, DropdownListOptions } from '
 @Component({
   selector: 'app-dropdown-list',
   templateUrl: './dropdown-list.component.html',
-  styleUrls: ['./dropdown-list.component.css'],
+  styleUrls: ['./dropdown-list.component.scss'],
 })
 export class DropdownListComponent implements OnInit {
   items: object[] = [];
+  isOpen = false;
 
   private pathToID: string = DEFAULT_PATH_TO_ID;
   private pathToTitle: string = DEFAULT_PATH_TO_TITLE;
@@ -29,6 +30,10 @@ export class DropdownListComponent implements OnInit {
 
   getItemID(item: object): string {
     return _.get(item, this.pathToID);
+  }
+
+  toggle() {
+    this.isOpen = !this.isOpen;
   }
 
   ngOnInit() {

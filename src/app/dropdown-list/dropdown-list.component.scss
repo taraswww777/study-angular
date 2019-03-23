@@ -1,0 +1,26 @@
+.app-dropdown-list {
+
+  .toggle {
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .list {
+    height: 0;
+    display: block;
+    overflow: hidden;
+  }
+
+  .list-item {
+    overflow: hidden;
+  }
+
+  &.isOpen {
+    background: #ccc;
+
+    .list {
+      transition: all 2s ease;
+      height: 100%;
+    }
+  }
+}

@@ -1,7 +1,10 @@
-<div>
-  <p>Список</p>
-  <ol>
-    <li *ngFor="let item of items;">
+<div class="app-dropdown-list" [ngClass]="{isOpen:isOpen}">
+  <p>Список
+
+    <span class="toggle" (click)="toggle()"> {{isOpen ? '-' : '+'}} </span>
+  </p>
+  <ol class="list">
+    <li *ngFor="let item of items;" class="list-item">
       {{getItemID(item)}} / {{getItemTitle(item)}}
     </li>
   </ol>
