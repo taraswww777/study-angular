@@ -1,25 +1,8 @@
 <div>
   <p>Список</p>
   <ol>
-    <li
-      *ngFor="
-        let item of items;
-        let i = index;
-        let first = first;
-        let last = last;
-        let even = even;
-        let odd = odd;"
-      [ngClass]="{
-        even:even,
-        odd:odd,
-        first:first,
-        last:last}"
-    >
-      {{i}}
-      {{item.ID}}
-      {{item.title}}
-      {{last}}
-      {{first}}
+    <li *ngFor="let item of items;">
+      {{getItemID(item)}} / {{getItemTitle(item)}}
     </li>
   </ol>
 </div>

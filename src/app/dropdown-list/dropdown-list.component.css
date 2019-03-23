@@ -1,0 +1,17 @@
+.first {
+  font-size: 30px;
+}
+
+.last {
+  color: red;
+  font-size: 20px;
+}
+
+
+.even {
+  background: green;
+}
+
+.odd {
+  background: brown;
+}
