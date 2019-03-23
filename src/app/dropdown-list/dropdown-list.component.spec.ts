@@ -8,14 +8,21 @@ describe('DropdownListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DropdownListComponent ]
+      declarations: [DropdownListComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DropdownListComponent);
     component = fixture.componentInstance;
+    component.options = {
+      items: [
+        {ID: 1, title: 'test title one'},
+        {ID: 2, title: 'test title two'},
+        {ID: 3, title: 'test title tree'},
+      ],
+    };
     fixture.detectChanges();
   });
 
