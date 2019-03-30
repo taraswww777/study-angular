@@ -1,11 +1,14 @@
-<div class="app-dropdown-list" [ngClass]="{isOpen:isOpen}">
-  <p>Список
-
-    <span class="toggle" (click)="toggle()"> {{isOpen ? '-' : '+'}} </span>
-  </p>
-  <ol class="list">
-    <li *ngFor="let item of items;" class="list-item">
-      {{getItemID(item)}} / {{getItemTitle(item)}}
-    </li>
-  </ol>
+<div class="{{bem()}}" [ngClass]="{isOpen:isOpen}">
+	<div class="{{bem('title')}}" [ngClass]="{isOpen:isOpen}">
+		<span class="{{bem('title-text')}}" *ngIf="title"> {{title}} {{title.length}} </span>
+		<span class="{{bem('toggle')}}" (click)="toggle()"> {{isOpen ? '-' : '+'}} </span>
+	</div>
+	<p>
+		<span> {{getItemTitle(currentValueItem) }} </span>
+	</p>
+	<ol class="{{bem('list')}}">
+		<li *ngFor="let item of items;" class="{{bem('list-item')}}" (click)="onClickItem(item)">
+			{{getItemID(item)}} / {{getItemTitle(item)}}
+		</li>
+	</ol>
 </div>
